@@ -22,7 +22,12 @@ class ReceiptRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'issuer_name' => 'required|min:3|max:200'
+            , 'issuer_type' => 'required|max:1|in:F,J'
+            , 'issuer_document' => 'required|min:11|max:14'
+            , 'payer_name' => 'required|min:3|max:200'
+            , 'payer_type' => 'required|max:1|in:F,J'
+            , 'payer_document' => 'required|min:11|max:14'
         ];
     }
 }
